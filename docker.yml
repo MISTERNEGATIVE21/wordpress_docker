@@ -1,0 +1,29 @@
+version: '3.7'
+services:
+  wordpress:
+    image: ghcr.io/misternegative21/wordpress_docker
+    ports:
+      - "9012:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: your_password
+      WORDPRESS_DB_NAME: wordpress
+   # volumes:
+   #   - ./wordpress:/var/www/html
+   # Mount custom PHP configuration
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: your_root_password
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: your_password
+    volumes:
+      - ./db:/var/lib/mysql
+      
+      
+      # you can deploy without mysql and use remote sql if deploying directing without docker.yaml config
