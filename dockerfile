@@ -1,5 +1,5 @@
 
-LABEL maintainer="MisterNegative21 <misternegative21@gmail.com>"
+LABEL maintainer= " MisterNegative21 <misternegative21@gmail.com>"
 
 # Use the official WordPress image as the base image
 FROM wordpress:latest
