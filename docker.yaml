@@ -25,5 +25,4 @@ services:
     volumes:
       - ./db:/var/lib/mysql
       
-      
       # you can deploy without mysql and use remote sql if deploying directing without docker.yaml config
