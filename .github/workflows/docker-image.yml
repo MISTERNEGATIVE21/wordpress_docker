@@ -37,5 +37,3 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
-      - name: Confirm image push
-        run: echo "Docker image pushed to Docker Hub: ${{ steps.meta.outputs.tags }}"
